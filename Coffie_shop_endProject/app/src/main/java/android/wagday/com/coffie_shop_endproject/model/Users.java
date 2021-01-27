@@ -9,9 +9,9 @@ public class Users
     private String password;
     private String nameLog;
     private String imges;
-    private String bloack_full;
-    private String block_like;
-    private String block_comment;
+    private int bloack_full;
+    private int block_like;
+    private int block_comment;
 
 
 
@@ -104,27 +104,27 @@ public class Users
     }
 
 
-    public String getBloack_full() {
+    public int getBloack_full() {
         return bloack_full;
     }
 
-    public void setBloack_full(String bloack_full) {
+    public void setBloack_full(int bloack_full) {
         this.bloack_full = bloack_full;
     }
 
-    public String getBlock_like() {
+    public int getBlock_like() {
         return block_like;
     }
 
-    public void setBlock_like(String block_like) {
+    public void setBlock_like(int block_like) {
         this.block_like = block_like;
     }
 
-    public String getBlock_comment() {
+    public int getBlock_comment() {
         return block_comment;
     }
 
-    public void setBlock_comment(String block_comment) {
+    public void setBlock_comment(int block_comment) {
         this.block_comment = block_comment;
     }
 

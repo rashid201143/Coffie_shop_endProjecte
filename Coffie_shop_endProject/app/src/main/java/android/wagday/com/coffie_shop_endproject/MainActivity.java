@@ -15,9 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,11 +31,15 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
     Button log_btn;
     TextView txt_create;
     EditText userName,pass;
     public static Users users;
+    MySQLiteOpenHelper db;
     ProgressDialog pro;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -46,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        log_btn = findViewById(R.id.loin_btn);
+        db = new MySQLiteOpenHelper(MainActivity.this);
+        log_btn = findViewById(R.id.log_btn);
         txt_create = findViewById(R.id.creat_lbl);
-        final MySQLiteOpenHelper sql=new MySQLiteOpenHelper(this);
+     //   final MySQLiteOpenHelper sql=new MySQLiteOpenHelper(this);
         userName=findViewById(R.id.txtUsername);
         pass=findViewById(R.id.pass);
         pro=new ProgressDialog(MainActivity.this);
@@ -74,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
                 }else {
                     Toast.makeText(MainActivity.this, "ادخل اسم المستخدم و كلمة المرور", Toast.LENGTH_LONG).show();}
-                  Intent intent = new Intent(MainActivity.this, home_type_pro.class);
-                   startActivity(intent);
-                    finish();
+                 // Intent intent = new Intent(MainActivity.this, home_type_pro.class);
+                 //  startActivity(intent);
+                  //  finish();
               //  }
              //  Intent intent = new Intent(MainActivity.this,home_type_pro.class);
              //   startActivity(intent);
@@ -117,16 +118,18 @@ public class MainActivity extends AppCompatActivity {
                         u.setLast_name(object.getString("lname"));
                         u.setPhone(object.getString("phone"));
                         u.setEmail(object.getString("email"));
-//                        u.setU_notes(object.getString("u_notes"));
+                        u.setImges(object.getString("img"));
                         u.setPassword(object.getString("pass"));
                         u.setNameLog(object.getString("user"));
-                        u.setImges(object.getString("img"));
-                        u.setBloack_full(object.getString("b_full"));
-                        u.setBlock_comment(object.getString("b_com"));
-                        u.setBlock_like(object.getString("b_like"));
-
-
-                      if(u.getBloack_full().toString()=="1")
+                        System.out.println("_________________DONE____________________________"+object.getString("img"));
+                      //  u.setImges(object.getString("img"));
+                        u.setBloack_full(Integer.parseInt(object.getString("b_full")));
+                        u.setBlock_comment(Integer.parseInt(object.getString("b_com")));
+                        u.setBlock_like(Integer.parseInt(object.getString("b_like")));
+users=u;
+                        DataBes dataBes=new DataBes(db);
+                        dataBes.add(u);
+                      if(u.getBloack_full()==1)
                       {
                           Toast.makeText(MainActivity.this,"تم حظرك ي حبيبي",Toast.LENGTH_LONG).show();
                       }

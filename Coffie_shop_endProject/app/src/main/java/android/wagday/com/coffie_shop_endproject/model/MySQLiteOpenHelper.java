@@ -1,7 +1,6 @@
 package android.wagday.com.coffie_shop_endproject.model;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -17,13 +16,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE if not EXISTS  Users (Id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE if not EXISTS  Users (Id INTEGER PRIMARY KEY ," +
                 "Firs_name	TEXT NOT NULL,"+
                 "Last_name TEXT NOT NULL," +
                 "Phone TEXT NOT NULL," +
                 "Email TEXT," +
                 "Password TEXT NOT NULL," +
-                "userName TEXT NOT NULL unique );");
+                "userName TEXT NOT NULL unique," +
+                "b_full INTEGER," +
+                "b_com INTEGER," +
+                "b_like INTEGER );");
 
         db.execSQL("CREATE TABLE if not EXISTS Comments (" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -85,7 +87,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
        // db.execSQL("Drop table if EXISTS ");
      //   onCreate(db);
-        db.execSQL("CREATE TABLE if not EXISTS  Users (Id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE if not EXISTS  Users (Id INTEGER PRIMARY KEY ," +
                 "Firs_name	TEXT NOT NULL,"+
                 "Last_name TEXT NOT NULL," +
                 "Phone TEXT NOT NULL," +

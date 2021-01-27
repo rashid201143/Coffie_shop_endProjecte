@@ -44,12 +44,16 @@ public class DataBes {
     }
     public long add(Users users){
         ContentValues values =new ContentValues();
+        values.put("id",users.getId());
         values.put("Firs_name",users.getFirst_name());
         values.put("Last_name",users.getLast_name());
         values.put("Phone",users.getPhone());
         values.put("Email",users.getEmail());
         values.put("Password",users.getPassword());
         values.put("userName",users.getNameLog());
+        values.put("b_full",users.getBloack_full());
+        values.put("b_com",users.getBlock_comment());
+        values.put("b_like",users.getBlock_like());
         long id=  db.insert("Users",null,values);
         return id;
 //        sql.add("INSERT INTO Users(Firs_name,Last_name,Phone,Email,Password,userName) VALUES ("+users.getFirst_name()+"" +
