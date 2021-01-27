@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         u.setBloack_full(Integer.parseInt(object.getString("b_full")));
                         u.setBlock_comment(Integer.parseInt(object.getString("b_com")));
                         u.setBlock_like(Integer.parseInt(object.getString("b_like")));
-users=u;
+                           users=u;
                         DataBes dataBes=new DataBes(db);
                         dataBes.add(u);
                       if(u.getBloack_full()==1)
