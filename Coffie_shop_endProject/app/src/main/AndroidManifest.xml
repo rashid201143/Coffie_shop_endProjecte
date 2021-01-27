@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="android.wagday.com.coffie_shop_endproject">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.READ_PHONE_STATE" />
-    <uses-permission android:name="android.READ_PRIVILEGED_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Coffie_shop_endProject">
-        <activity android:name=".user_profile"></activity>
+        <activity android:name=".all_prodact_list"></activity>
+        <activity android:name=".user_profile" />
         <activity android:name=".splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +25,13 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.READ_PHONE_STATE" />
+    <uses-permission android:name="android.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

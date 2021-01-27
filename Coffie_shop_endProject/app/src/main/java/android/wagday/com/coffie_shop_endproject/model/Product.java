@@ -1,19 +1,17 @@
 package android.wagday.com.coffie_shop_endproject.model;
 
-import java.sql.Blob;
-
 public class Product
 {
     private int id;
-    private int name;
+    private String name;
     private int price;
     private int size_id;
     private int dep_id;
-    private Blob image;
+    private String image;
     private String other_details;
     public Product() {}
 
-    public Product(int id, int name, int price, int size_id, int dep_id, Blob image, String other_details) {
+    public Product(int id, String name, int price, int size_id, int dep_id, String image, String other_details) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -31,11 +29,11 @@ public class Product
         this.id = id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -63,11 +61,11 @@ public class Product
         this.dep_id = dep_id;
     }
 
-    public Blob getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
