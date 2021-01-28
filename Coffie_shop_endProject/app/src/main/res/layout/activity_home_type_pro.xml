@@ -144,6 +144,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Coffee"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -170,18 +171,18 @@
                         android:text="Coffee"
                         android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/litegry" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="المشروبات الساخنه القهوه اليمنية"
                         android:textColor="@color/fbutton_color_asbestos" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/litegry" />
 
                 </LinearLayout>
 
@@ -202,6 +203,7 @@
             >
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/IceCream"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -228,12 +230,6 @@
                         android:text="IceCream"
                         android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/litegry" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -241,12 +237,19 @@
                         android:text="جميع انواع الايسكريم  الشرقية والغربية"
                         android:textColor="@color/fbutton_color_asbestos" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/litegry" />
+
                 </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Sweets"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -270,14 +273,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Coffee"
+                        android:text="Sweets"
                         android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/litegry" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -285,6 +282,12 @@
                         android:gravity="center"
                         android:text="المشروبات الساخنه القهوه اليمنية"
                         android:textColor="@color/fbutton_color_asbestos" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/litegry" />
 
                 </LinearLayout>
 
@@ -306,6 +309,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Yamen"
                 android:layout_width="340dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
@@ -332,18 +336,18 @@
                         android:text="البن اليمني"
                         android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/litegry" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="جميع انواع البن اليمني حبوب و مطحون "
                         android:textColor="@color/fbutton_color_asbestos" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/litegry" />
 
                 </LinearLayout>
 

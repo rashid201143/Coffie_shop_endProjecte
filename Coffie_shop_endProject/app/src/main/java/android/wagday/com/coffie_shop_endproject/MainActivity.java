@@ -127,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
                         u.setBlock_comment(Integer.parseInt(object.getString("b_com")));
                         u.setBlock_like(Integer.parseInt(object.getString("b_like")));
                            users=u;
-                        DataBes dataBes=new DataBes(db);
-                        dataBes.add(u);
+                     //   DataBes dataBes=new DataBes(db);
+                     //   dataBes.add(u);
                       if(u.getBloack_full()==1)
                       {
                           Toast.makeText(MainActivity.this,"تم حظرك ي حبيبي",Toast.LENGTH_LONG).show();

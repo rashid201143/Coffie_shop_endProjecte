@@ -7,17 +7,21 @@ public class Product
     private int price;
     private int size_id;
     private int dep_id;
-    private String image;
+    private String img1;
+    private String img2;
+    private String img3;
     private String other_details;
     public Product() {}
 
-    public Product(int id, String name, int price, int size_id, int dep_id, String image, String other_details) {
+    public Product(int id, String name, int price, int size_id, int dep_id, String img1,String img2,String img3, String other_details) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.size_id = size_id;
         this.dep_id = dep_id;
-        this.image = image;
+        this.img1 = img1;
+        this.img2 = img2;
+        this.img3 = img3;
         this.other_details = other_details;
     }
 
@@ -61,12 +65,26 @@ public class Product
         this.dep_id = dep_id;
     }
 
-    public String getImage() {
-        return image;
+    public String getImg1() {
+        return img1;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImg1(String img1) {
+        this.img1 = img1;
+    }
+    public String getImg3() {
+        return img3;
+    }
+
+    public void setImg3(String img1) {
+        this.img3 = img1;
+    }
+    public String getImg2() {
+        return img2;
+    }
+
+    public void setImg2(String img1) {
+        this.img2 = img1;
     }
 
     public String getOther_details() {

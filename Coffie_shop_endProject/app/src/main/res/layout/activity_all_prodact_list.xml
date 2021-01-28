@@ -60,14 +60,25 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/list_prodact"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
+    <LinearLayout
+        android:id="@+id/edit_cus_list_det"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_alignParentRight="true"
+
+        android:layout_weight="95.0"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/len_tite"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/len_tite">
+
+        <ListView
+            android:id="@+id/list_prodact"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:drawSelectorOnTop="false" />
 
 
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
