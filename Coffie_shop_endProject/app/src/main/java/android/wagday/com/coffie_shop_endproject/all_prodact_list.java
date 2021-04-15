@@ -6,13 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.wagday.com.coffie_shop_endproject.model.Product;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,28 +43,78 @@ public class all_prodact_list extends AppCompatActivity {
     ListView list_prodact;
    public ArrayList<Product> list=new ArrayList<>();
     int Dep_id;adabter aaa;
+    ImageView imgg;
     ProgressDialog pro;
 
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_all_prodact_list);
         pro=new ProgressDialog(all_prodact_list.this);
         Intent intent = getIntent();
         Dep_id= intent.getIntExtra("id",1);
+        TextView name = (TextView) findViewById(R.id.name);
+        imgg=findViewById(R.id.imgg);
+        if(Dep_id==5){
+            name.setText("البن اليمني");
+imgg.setImageResource(R.drawable.ic_coffee_beans);
+imgg.setBackground(getDrawable(R.drawable.cierca_bac_coffic_color));
+        }
+        else if(Dep_id==1){
+            name.setText("Coffee");
+            imgg.setImageResource(R.drawable.ic_coffee);
+            imgg.setBackground(getDrawable(R.drawable.cierca_bac_coffic_color));
+        }
+        else if(Dep_id==3){
+            name.setText("IceCream");
+            imgg.setImageResource(R.drawable.ic_ice_cream);
+            imgg.setBackground(getDrawable(R.drawable.cerical_bac_ice_color));
+        }
+        else if(Dep_id==4){
+            name.setText("Sweets");
+            imgg.setImageResource(R.drawable.ic_cake);
+            imgg.setBackground(getDrawable(R.drawable.cerical_bac_cack_color));
+        }
         GetAllDepartment(Dep_id);
-        setContentView(R.layout.activity_all_prodact_list);
+
         list_prodact=findViewById(R.id.list_prodact);
          aaa=new adabter(this,list);
         list_prodact.setAdapter(aaa);
-        list_prodact.setOnClickListener(new View.OnClickListener() {
+        list_prodact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // view.setSelected(true);
+                showDialogs(view);
+
 
             }
         });
+/*        list_prodact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialogs(v);
+            }
+        });*/
+    }
+    private void showDialogs(View view) {
+        TextView name = (TextView) view.findViewById(R.id.name);
+        TextView id = (TextView) view.findViewById(R.id.id1);
+        TextView qwe=view.findViewById(R.id.qwe);
+        TextView uri=view.findViewById(R.id.uri);
+        Intent intent = new Intent(all_prodact_list.this,profile_prodact.class);
+        //   list= loginFromWebServiceAPI(5);
+        intent.putExtra("id", id.getText());
+        intent.putExtra("name", name.getText());
+        intent.putExtra("qwe", qwe.getText());
+        intent.putExtra("uri", uri.getText());
+        startActivity(intent);
+       // FragmentTransaction manager = getSupportFragmentManager().beginTransaction();
+       // CustomerDetView cal = new CustomerDetView(this, cus_name, tr_id.getText().toString(), tr_amount.getText().toString(), tr_date.getText().toString()
+         //       , tr_remarks.getText().toString(), img, curr_name);
+        //cal.show();
 
     }
     private ArrayList<Product> loginFromWebServiceAPI(int id) {
@@ -155,7 +207,7 @@ return list1;
     private ArrayList<Product> GetAllDepartment(int id) {
         ArrayList<Product>list1=new ArrayList<>();
         if (IsConnectedInternet())
-        {pro.setTitle("جاري عملية التسجيل...");
+        {pro.setTitle("جاري عملية جلب المنتجات...");
             pro.show();
          list1=   loginFromWebServiceAPI(id);
         }
@@ -215,10 +267,18 @@ return list1;
             System.out.println("_________________5555555555_______________________");
             CircleImageView img=view.findViewById(R.id.img_pro);
             TextView name=view.findViewById(R.id.name);
+            TextView id1=view.findViewById(R.id.id1);
             //TextView count=findViewById(R.id.count);
             TextView price=view.findViewById(R.id.price);
-            img.setImageURI(Uri.parse(list.get(i).getImg1()));
+           // img.set(Uri.parse(list.get(i).getImg1()));
+          //  img.loadUrl(list.get(i).getImg1());
+            TextView qwe=view.findViewById(R.id.qwe);
+            TextView uri=view.findViewById(R.id.uri);
+            uri.setText(list.get(i).getImg1());
             name.setText(list.get(i).getName());
+            id1.setText(list.get(i).getId()+"");
+            qwe.setText(list.get(i).getOther_details());
+            Picasso.with(all_prodact_list.this).load(list.get(i).getImg1()).into(img);
             price.setText(list.get(i).getPrice()+"");
             return view;
         }

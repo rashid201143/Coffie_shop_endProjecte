@@ -39,26 +39,27 @@
 
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
                     android:text="MAH Jeuse"
                     android:textColor="@color/colortitel"
+                    android:textSize="22sp"
 
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/namee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    android:textStyle="normal"
+                    android:layout_marginBottom="5px"
+                    android:layout_marginTop="5px"
                     android:text="عصير مشكل فواكه"
                     android:textColor="@color/colorSuptitel"
-                    android:layout_marginTop="5px"
-                    android:layout_marginBottom="5px"
+                    android:textSize="22sp"
 
 
-                    />
+                    android:textStyle="normal" />
 
             </LinearLayout>
         </LinearLayout>

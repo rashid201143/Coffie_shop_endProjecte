@@ -26,6 +26,49 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/id1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="0dp"
+        android:text="name_prodact"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/qwe"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="0dp"
+        android:text="name_prodact"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/uri"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="0dp"
+        android:text="name_prodact"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:textStyle="bold"
@@ -58,6 +101,7 @@
         app:layout_constraintVertical_bias="0"
         tools:ignore="MissingConstraints" />
 
+
     <de.hdodenhof.circleimageview.CircleImageView
 
         android:id="@+id/img_pro"
@@ -73,7 +117,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+   <!-- <WebView
 
+        tools:layout_editor_absoluteX="316dp"
+        tools:layout_editor_absoluteY="35dp"
+        android:id="@+id/img_pro"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/jues_pro"
 
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,WebViewLayout"/>
 
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
